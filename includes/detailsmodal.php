@@ -41,13 +41,13 @@ $size_array = explode(',', $sizestring);
             <form  action="add_cart.php" method="post"><!--when the form has to have class and when no ?-->
               <div class="form-group">
                 <div class="col-xs-3"><label for="quantity">Quantity:</label>
-                  <input type="text" class="form-control" id="quantity" name="quantity">
+                  <input type="number" class="form-control" id="quantity" name="quantity" min='0'>
                 </div>
                   <br>
                   <div class="col-xs-9">&nbsp</div><!--nbsp is non breaking spave so that means all theese col xs 9 will stick together-->
-              </div>
+              </div><br><br>
               <div class="form-group">
-                <label for="size">size</label>
+                <label for="size">Size</label>
                 <select name="size" id="size" class="form-group" >
                   <option value=""></option>
                   <?php foreach($size_array as $string) {
