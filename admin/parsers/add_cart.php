@@ -46,7 +46,7 @@ if($cart_id != ''){
   //add cart to the database and set cookie
   $items_json = json_encode($item);
   $cart_expire = date("Y-m-d H:i:s",strtotime("+30 days"));
-  $db->query("INSERT INTO cart (items, cart_expire) VALUES ('{$items_json}','{$cart_expire}')");//this insert the cart into database
+  $db->query("INSERT INTO cart (items, expire_date) VALUES ('{$items_json}','{$cart_expire}')");//this insert the cart into database
   $cart_id = $db->insert_id;//insert the last id (from the previous line of code) into database
   setcookie(CART_COOKIE,$cart_id,CART_COOKIE_EXPIRE,'/',$domain,false);//set the cookie with name, value, exipre date, path, domain
 }
